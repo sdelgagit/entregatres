@@ -1,0 +1,205 @@
+.linea{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 80%;
+    position: absolute;
+    top: $separacion;
+  }
+.header{
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background-position: center center;
+    filter: brightness(70%);
+}
+.cabezado{
+    .carousel-indicators .active{
+        background-color: $amarillo;
+    }
+    .navegacion{
+        padding-top: $separacion;
+        padding-left: auto;
+        padding-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+        position: absolute;
+        width: 100%;
+        top: 0%;
+        z-index: 99999;
+        .container-fluid{
+            position: relative;
+            z-index: 20;
+            width: 90%;
+        }
+        .logoWeb__texto{
+            font-size: 2.5rem;
+            color: $bla;
+            margin: 0;
+            display: inline;
+          }
+        .logoWeb__letra{
+            font-size: 4.5rem;
+            color: $amarillo;
+            font-weight: bold;
+        }
+        .fondoBT{
+            background-color: $amarillo;
+            width: 5rem;
+            height: 3rem;
+        }
+    }
+} 
+.lista{
+    z-index: 10;
+    .enlace{
+        color: #f2f2f2;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.6rem;
+        padding: 1rem 1.5rem;
+        display: block;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.493);
+        &:hover {
+            background-color: rgba(0,0,0, 0.25);
+            color:$amarillo;
+            transition: 0.2s;
+        }
+        &:after{           
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: "";
+            background-color: #f2f2f2b2;
+            width: 100%;
+            height: 1px;
+            transform: scale(0);
+            transform-origin: left center;
+            transition: all .5s ease-in-out;      
+        }
+        &:hover:after{
+            transform: scale(1);
+        }
+    }
+    .desplegable{
+        position: absolute;
+        display: none;
+        li .enlace{
+            display: block;
+            background-color: rgba(0,0,0, 0.2);
+            padding: 2rem 2rem 2rem 6rem;
+        }
+    }
+    li:hover ol{
+        display: none;
+    }
+}
+.titulo{
+    margin: 0 $separacion ;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid $amarillo;
+    .titulo__principal{
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color:$bla;
+    }
+    .titulo__info{
+        font-size: 2rem;
+        color: $amarillo;
+        font-weight: 700;
+        text-align: left;
+    }
+}
+.tituloP__principal{
+    text-align: center;
+}
+.cabezado .navbar-nav .nav-link.active{
+    color: $amarillo; 
+}
+//Para dispositivos mas grandes
+@media (min-width:380px){
+    .lista{
+        .enlace{
+            font-size: 2rem;
+        }
+    }
+}
+@media (min-width:768px) {
+    .titulo{
+        .titulo__principal{
+            font-size: 3rem;
+        }    
+        .titulo__info{
+            font-size: 2.4rem;
+        }
+    }
+}
+@media (min-width:900px) {
+    .titulo{
+        .titulo__principal{
+            font-size: 4.5rem;
+            text-transform: uppercase;
+            color:$bla
+        }
+        .titulo__info{
+            font-size: 3rem;
+            color: $amarillo;
+            font-weight: 700;
+            text-align: left;
+        }
+    }
+}
+@media (min-width:993px) {
+    .f-lista{
+        background-color:transparent;
+        background: linear-gradient(180deg, rgba(14,14,14,0.908000700280112) 5%, rgba(255,255,255,0) 97%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20vh;
+    }
+    .lista .enlace{
+        background-color:transparent;
+    }
+    .lista{
+        li:hover ol{
+        display: block;
+        }
+    }
+} 
+
+//Flecha para ir al inicio, cuando se desplaza hacia abajo
+.campoInicio{
+    background-color: $amarillo;
+    height: 8rem;
+    width:  8rem;
+    border-radius: 50%;
+    position: relative;
+    position: fixed;
+    right: 5%;
+    top: 85%;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    transition: .5s;
+    &:hover{
+        background-color: $neg;
+    }
+    .flechaArriba{
+        width: 5rem;
+        position: absolute;
+        @include centrado
+    }
+}
+@media (max-width:720px) {
+    .campoInicio{
+        height: 6rem;
+        width:  6rem;
+        .flechaArriba{
+            width: 3rem;
+        }
+    }
+}

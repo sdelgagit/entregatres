@@ -1,0 +1,57 @@
+//Inicio de Seccion Sobre Nosotros
+.nosotros{
+    margin: $separacion*1.5 auto;
+    padding-bottom: 9rem;
+    .nosotros__info{
+        width: 80% ;
+        margin: $separacion*2 auto;
+        border-right: 2px solid $amarillo;
+        height: 40rem;
+    }
+    .img1, .img2{
+        transition: all 3s ease;
+        width: 100%;
+    }
+    .zoom{
+        overflow: hidden;
+    }
+    .img2:hover{
+        transform:scale(1.10, 1.10);
+        overflow: hidden;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .nosotros__imagen{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+@media only screen and (min-width:900px){
+    .nosotros{
+        display: flex;
+        width: 90%;
+        .nosotros__info{
+            flex-basis:0 0 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-right: $separacion*1.4;
+        }
+        .nosotros__imagen{
+            position: relative;
+            flex-basis:0 0 50%;
+            align-self: center;
+            .absolute{
+                position: absolute; 
+                left: -10%; 
+                bottom: -15%
+            }
+            .img1{
+                width: 50%;
+            } 
+            .img2{
+                width: 100%;
+            } 
+        }
+    }
+}

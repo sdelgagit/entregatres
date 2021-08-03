@@ -1,0 +1,126 @@
+.navegacion404{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+    .logoWeb__texto404{
+        font-size: 3rem;
+        color: $neg;
+    }
+    .logoWeb__letra404{
+        font-size: 4rem;
+        color: $amarillo;
+    }
+}
+.notFound{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    .notFound__img{
+        position: relative;
+        img{
+            object-fit: cover;
+            object-position: center center;
+            width: 100%;
+            height: 100vh;
+            filter: brightness(90%);
+        }
+        .numero{
+            position: absolute;
+            @include centrado;
+            font-size: 15rem;
+            color:$amarillo;
+        }
+        .cita404{
+            position: absolute;
+            bottom: 15%;
+            left: 42%;
+            background-color: $bla;
+            width: 12rem;
+            height: 12rem;
+            border-radius: 25px;
+        }
+    }
+    .notFound__text{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .cono404{
+            width: 10rem;
+        }
+        .titulo404{
+            color: $neg;
+            font-size: 4rem;
+            text-transform: uppercase;
+        }
+        .parrafo404{
+            width: 50%;
+        }
+    }
+}
+@media (max-width:720px) {
+    .notFound{
+        grid-template-columns: 1fr;
+        .notFound__img{
+            img{
+                filter: brightness(50%)
+            }
+            .numero{
+                top: 15%;
+                font-size: 7rem;
+            }
+            .cita404{
+                display: none;
+            }
+        }
+        .notFound__text{
+            position: absolute;
+            top: 10%;
+            .cono404{
+                width: 7rem;
+            }
+            .titulo404{
+                color: $bla;
+                font-size: 3rem;
+                text-transform: uppercase;
+                margin: 0.5rem 0;
+            }
+            .parrafo404{
+                width: 80%;
+                color: $bla;
+            }
+        }
+    }
+}
+@media (max-width:420px) {
+    .notFound{
+        .notFound__img{
+            .numero{
+                top: 15%;
+                font-size: 5rem;
+            }
+            .cita404{
+                display: none;
+            }
+        }
+        .notFound__text{
+            position: absolute;
+            top: 10%;
+            .cono404{
+                width: 4rem;
+            }
+            .titulo404{
+                color: $bla;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                margin: 0.5rem 0;
+            }
+            .parrafo404{
+                width: 90%;
+                color: $bla;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,204 @@
+//Inicio de Estilos para la seccion de Proyectos
+.cabecera{
+    position: relative;
+    height: 25rem;
+    .cabecera__foto{
+        background-image: url(../img/pexels-pixabay-262367.jpg);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 25rem;
+        overflow: hidden;
+        object-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        position: relative;
+      } 
+      .tituloCabecera{
+        position: absolute;
+        @include centrado
+      }
+}
+.proyectos{
+  img{
+    width: 100%;
+  }
+  .proyectos__contenido{
+    margin: $separacion auto;
+    width: 90%;
+  }
+}
+
+@media (min-width:720px) {
+  .proyectos{
+    .sectionImg{
+      display: flex;
+      flex-wrap: wrap;
+      div{
+        flex-basis:50%;
+        overflow: hidden;
+      }
+      .imgCol{
+        max-width: 100%;
+        min-height: 100%;
+        height: 50rem;
+        object-fit: cover;
+        object-position: center;
+        transition: all 3s ease;
+        position: relative;
+        fill-opacity: 50%;
+        &:hover{
+          transform: scale(1.10,1.10);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:900px) {
+  .proyectos{
+    .proyectos__row{
+      display: flex;
+      align-items: center;
+      background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(226,222,222,1) 99%);
+      .proyectos__contenido{
+        width: 30%;
+      }
+      .sectionImg{
+        flex-basis:0 0 65%;
+        max-width: 65%;
+        min-height: 70vh;
+      }
+      
+      .imgCol{
+        object-fit: cover;
+        transition: all 1s ease;
+      }
+    }
+    .blanco{
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+//Inicio de Estilos a la sección de video con su contenido.
+.video{
+  width: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+  filter: brightness(90%);
+}
+
+.seccionVideo{
+  position: relative;
+  .top-opaco{
+    background-color: transparent;
+    background: linear-gradient(180deg, rgba(14, 14, 14, 0.3) 5%, rgba(255, 255, 255, 0) 90%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    z-index: 99;
+  }
+  .bottom-opaco{
+    background-color: transparent;
+    background: linear-gradient(0deg, rgba(14, 14, 14, 0.3) 5%, rgba(255, 255, 255, 0) 90%);
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    z-index: 99;
+  }
+  .contador{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(1,1fr);
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    @include centrado
+  }
+  .contador__info{
+    border-bottom: 1px solid $gris;
+    margin: 0 auto;
+    z-index: 1000;
+    padding: 2rem;
+      &:last-child{
+        border-bottom: none;
+      }
+      p{
+        font-size: 2rem;
+        color: $amarillo;
+        font-weight: 700;
+        margin: 0rem;
+      }
+      h3{
+        color: $bla;
+        font-size: 2rem;
+      }
+  }
+}
+@media (min-width:720px) {
+  .seccionVideo{
+    .contador{
+      grid-template-columns: repeat(2,1fr);
+      width: 80%;
+      height: auto;
+    }
+    .contador__info{
+      padding: 2rem;
+      &:last-child{
+        border-bottom: 1px solid $bla;
+      } 
+    }
+  }
+}
+@media (min-width:993px) {
+  .seccionVideo{
+    .contador{
+      grid-template-columns: repeat(4,1fr);
+      width: 80%;
+      transform: translate(-50%, 100%);
+      transition: all 0.7s ease;
+      .contador__info{
+        border-right: 1px solid $gris;
+        border-bottom: none;
+        width: 100%;
+        &:last-child{
+          border-right: none;
+        }
+      }
+      p{
+        font-size: 3rem;
+      }
+      h3{
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+/* Boton para todas las secciones */
+.boton {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #f2f2f2;
+  transition: 0.2s;
+  background-color: $neg;
+  padding: 1.5rem 3rem;
+  border: 1px solid;
+  display: inline-block;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  &:hover{
+    background-color: $bla;
+    border:1px solid $neg;
+    color: $neg;
+  }
+}

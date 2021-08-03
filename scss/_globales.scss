@@ -1,0 +1,64 @@
+*,*:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  
+}
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Spectral', serif;
+}
+
+h2,h3,h4,h5 {
+  text-align: center;
+  color: #262626;
+  font-size: 3rem;
+}
+a{
+  text-decoration: none;
+}
+p{
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin: 4rem 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Variables */
+
+$separacion: 5rem;
+
+$bla: #fff;
+$gris: #e1e1e1;
+$neg: #000;
+$amarillo : #f2cd5e;
+
+// Mixins
+@mixin centrado{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//Condicional
+h1{
+  @if $amarillo == #f2cd5e {
+    color:$amarillo;
+  }
+}
+/*Bucle*/
+@for $i from 1 to 3 {
+  h#{$i}{font-size: 5rem - $i;}
+}
+//Map
+$fondo: (1: $amarillo, 2: $bla, 3: $neg);
+//Each
+@each $n, $color in $fondo{
+  .backG-#{$n}{
+    background-color: $color;
+  }
+}

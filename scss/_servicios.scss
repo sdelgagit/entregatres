@@ -1,0 +1,43 @@
+//Inicio de la seccion de Servicios
+.servicios{
+    display: flex;
+    flex-direction: column;
+    margin-top: $separacion;
+    .servicios__arq{
+        padding: 5rem;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &:nth-child(odd){
+            background-color: rgba(230, 230, 230,.45);
+        } 
+        &:hover{
+            background-color: rgba(230, 230, 230,.7);
+        }
+    }
+    img{
+        width: 8rem;
+    }
+}
+@media (min-width:720px) {
+    .servicios{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        .servicios__arq{
+            flex-basis: 50%;
+        }
+    }
+}
+@media (min-width:920px) {
+    .servicios{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        .servicios__arq{
+            flex-basis: 33%;
+            padding: 9rem $separacion;
+        }
+    }
+}
